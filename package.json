@@ -33,6 +33,7 @@
     "yup": "^1.7.1"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.7.4",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

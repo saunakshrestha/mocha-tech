@@ -12,8 +12,7 @@ This guide explains how to deploy the Mocha Tech Next.js application on Netlify.
 The repository includes a `netlify.toml` file that configures the deployment settings:
 
 - **Build command**: `pnpm install && pnpm run build` - Installs dependencies and builds the Next.js app
-- **Publish directory**: `.next` - The output directory for Next.js builds
-- **Netlify Plugin**: `@netlify/plugin-nextjs` - Automatically handles Next.js routing and prevents 404 errors
+- **Netlify Plugin**: `@netlify/plugin-nextjs` - Automatically handles Next.js routing, publish directory, and prevents 404 errors
 
 ## Deployment Steps
 
@@ -21,12 +20,12 @@ The repository includes a `netlify.toml` file that configures the deployment set
    - Log in to your Netlify account
    - Click "Add new site" > "Import an existing project"
    - Choose your Git provider (GitHub, GitLab, or Bitbucket)
-   - Select the `saunakshrestha/mocha-tech` repository
+   - Select this repository
 
 2. **Configure Build Settings** (if not auto-detected):
    - Build command: `pnpm install && pnpm run build`
-   - Publish directory: `.next`
    - The `netlify.toml` file should automatically configure these settings
+   - The `@netlify/plugin-nextjs` automatically handles the publish directory
 
 3. **Deploy**:
    - Click "Deploy site"
@@ -66,9 +65,9 @@ If your application uses environment variables:
 - Verify that the build command works locally
 
 ### 404 Errors Persist
-- Ensure `@netlify/plugin-nextjs` is installed during build
+- Ensure `@netlify/plugin-nextjs` is installed (check `package.json` devDependencies)
 - Check that `netlify.toml` is in the root of your repository
-- Verify the publish directory is set to `.next`
+- Let the plugin automatically handle the publish directory (don't manually set it)
 
 ### Missing Environment Variables
 - Add required environment variables in Netlify dashboard
