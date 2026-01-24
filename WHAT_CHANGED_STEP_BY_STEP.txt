@@ -1,0 +1,392 @@
+MochaTech Next.js (App Router) — What changed, step-by-step (Jan 2026)
+=====================================================================
+
+Goal
+----
+Turn the default Next.js starter page into a production-shaped, single-page B2B site at `/`
+with:
+- Next.js App Router (server-first by default / RSC-friendly)
+- TypeScript strict typing
+- Tailwind theme (“mocha coffee vibes”) + container queries
+- Basic “full-stack” integration via an API route for the contact form
+- TanStack Query provider for real-world data-fetch patterns
+- Dark mode toggle
+- A modular component structure that’s easy to learn incrementally
+
+
+0) IMPORTANT: Why you still saw the default starter UI
+------------------------------------------------------
+The page at `/` is controlled by:
+  src/app/page.tsx
+
+Your repo originally had the default template UI in that file, so `/` showed:
+  “To get started, edit the page.tsx file…”
+
+We replaced that file so `/` renders the MochaTech homepage sections.
+
+If your dev server was already running, you needed to restart it:
+  Ctrl+C then `pnpm dev`
+
+
+1) Fixing pnpm install issues in a sandboxed environment
+--------------------------------------------------------
+Problem we hit:
+- pnpm tried to use a global store outside the workspace:
+  /Users/.../Library/pnpm/store/...
+- The sandbox expects dependency linking to happen inside the workspace.
+
+What we added:
+  .npmrc
+  ------
+  store-dir=.pnpm-store
+
+What this line does:
+- It forces pnpm to store/link packages from a local folder inside this repo:
+  /Users/.../mochatech/.pnpm-store
+- That makes installs reproducible and avoids permission/store-location conflicts.
+
+
+2) Dependencies installed (what + why)
+--------------------------------------
+Core app/runtime dependencies:
+- @tanstack/react-query
+  Why: Industry-standard data fetching/caching layer in React apps.
+  You’ll see it used via QueryClientProvider + useMutation/useQuery.
+
+- @tanstack/react-query-devtools
+  Why: Debugging queries/mutations while learning.
+
+- next-themes
+  Why: Best-practice dark mode using a class on <html> (works well with Tailwind).
+
+- framer-motion
+  Why: Modern animation toolkit; we used subtle hero/section animations.
+
+- formik + yup
+  Why: Form state management + schema validation.
+  Enterprise-ish forms often need clear validation rules; Yup keeps it declarative.
+
+- emailjs-com
+  Why: You requested EmailJS option. Note: package is deprecated in favor of @emailjs/browser.
+  In this build we used a Next.js API route as the “backend send” placeholder instead.
+
+- react-masonry-css
+  Why: Simple masonry layout for a portfolio-style section.
+
+- react-slick + slick-carousel + @types/react-slick
+  Why: Carousel for testimonials + required CSS package + TypeScript types.
+
+- @react-google-maps/api
+  Why: You requested this; we currently use a lightweight iframe embed so it works
+  without API keys. A future refactor can replace the embed with this package.
+
+UI foundation dependencies (shadcn-style):
+- clsx + tailwind-merge
+  Why: The standard “cn()” utility: compose Tailwind classes safely.
+
+- lucide-react
+  Why: Clean icon set (coffee icon, chevrons, etc.).
+
+- class-variance-authority (CVA)
+  Why: A common approach to build variant-based components (Button variants etc.).
+
+- @radix-ui/react-slot
+  Why: Enables the shadcn pattern “asChild” (button wrapping Link/a tags).
+
+- @radix-ui/react-accordion
+  Why: Accessible accordion used for the FAQ section.
+
+Tailwind plugins:
+- tailwindcss-animate
+  Why: Small, useful animation keyframes (accordion open/close etc.).
+
+- @tailwindcss/container-queries
+  Why: Container queries allow components to respond to their container width,
+  not just viewport width (a newer responsive pattern that’s very relevant).
+
+Dev tooling:
+- prettier
+  Why: Consistent formatting (very common in teams).
+
+- husky + lint-staged
+  Why: Git hooks + run lint/format on staged files (common job requirement).
+  NOTE: Husky hook scripts are not fully set up yet; we just installed the tools.
+
+
+3) Tailwind theming and design tokens (“mocha vibes”)
+-----------------------------------------------------
+Files changed/added:
+
+3.1) Added tailwind.config.ts
+  tailwind.config.ts
+
+Key lines:
+- darkMode: ["class"]
+  Means dark mode is controlled by adding/removing the `.dark` class on <html>.
+  next-themes handles that for us.
+
+- theme.extend.colors.mocha
+  Adds explicit brand colors:
+    mocha.primary  -> #6F4E37
+    mocha.beige    -> #D2B48C
+    mocha.cream    -> #F5F5DC
+    mocha.orange   -> #D2691E
+
+- theme.extend.colors.background/foreground/primary/etc
+  These map Tailwind colors to CSS variables (shadcn-style tokens),
+  so components can use semantic colors instead of hard-coded hex.
+
+- plugins: [tailwindcss-animate, @tailwindcss/container-queries]
+  Enables accordion animation + container query utilities (e.g. @container, @md:...).
+
+3.2) Updated global CSS variables
+  src/app/globals.css
+
+Key concepts:
+- :root defines CSS variables for light mode:
+  --background, --foreground, --primary, --secondary, etc.
+  Values are stored as HSL pieces (e.g. “24 34% 33%”) so Tailwind can do:
+    hsl(var(--primary))
+
+- .dark overrides those variables for dark mode
+  So switching dark mode just changes variables, not rewriting classes everywhere.
+
+- .coffee-texture
+  A subtle background overlay using radial gradients to give “coffee steam” vibes.
+
+- html { scroll-behavior: smooth; }
+  Clicking navbar anchor links scrolls smoothly to sections.
+
+
+4) App-level providers (TanStack Query + dark mode)
+---------------------------------------------------
+Files:
+
+4.1) Added src/app/providers.tsx
+  This is a Client Component ("use client") because:
+  - TanStack Query uses React context/state
+  - next-themes uses client-side theme detection
+
+Key lines:
+- const [queryClient] = React.useState(() => new QueryClient(...))
+  Important pattern: ensures QueryClient is created once per browser session,
+  not recreated on every render.
+
+- <ThemeProvider attribute="class" ... />
+  Sets `.dark` on <html> when dark mode is active.
+
+- <QueryClientProvider client={queryClient}>
+  Makes TanStack Query available to all client components.
+
+4.2) Updated src/app/layout.tsx
+- Switched fonts to Inter (body) and Roboto (headings) via next/font/google
+- Wrapped the whole app in <Providers> so all pages/components get query + theme.
+- Updated metadata title/description for MochaTech (basic SEO baseline).
+
+
+5) Utility function for className composition
+---------------------------------------------
+File:
+  src/lib/utils.ts
+
+Key function:
+- export function cn(...inputs) { return twMerge(clsx(inputs)); }
+  What it does:
+  - clsx: conditionally builds a string of class names
+  - tailwind-merge: removes conflicts (e.g. “p-4 p-6” becomes “p-6”)
+
+Why you care:
+This is the standard pattern used in many shadcn/modern Tailwind codebases.
+
+
+6) “shadcn-style” UI primitives (minimal)
+-----------------------------------------
+We didn’t run the shadcn CLI generator. Instead we added minimal equivalents so you
+can learn by reading code.
+
+Files:
+- src/components/ui/button.tsx
+  Uses CVA to implement variants (default/outline/ghost/etc), sizes, and “asChild”.
+
+- src/components/ui/card.tsx
+  Basic Card layout primitives: Card, CardHeader, CardTitle, CardContent, etc.
+
+- src/components/ui/badge.tsx
+  Simple badge variants.
+
+- src/components/ui/accordion.tsx
+  Radix Accordion wrappers (accessible behavior) + Tailwind animation classes.
+
+How to read these:
+- Button is the most important. It shows “design system” thinking (variants).
+- Accordion shows how teams wrap Radix primitives into their own UI layer.
+
+
+7) “Backend-friendly” typed content/data module
+------------------------------------------------
+File:
+  src/lib/data.ts
+
+What’s in it:
+- navLinks: navbar anchors
+- brand palette
+- founderProfile (verbatim content, placed into typed fields)
+- services, processSteps, portfolioProjects, sectors, faqs, testimonials
+
+Why it matters:
+- Backend developers often like a “data model” approach.
+- Later you can replace this file with a DB + Prisma and keep the UI stable.
+
+
+8) Sections + page composition (what renders at `/`)
+-----------------------------------------------------
+Home route file:
+  src/app/page.tsx
+
+What it does:
+- Imports and renders the sections in order:
+  Navbar
+  Hero
+  ServicesSection
+  AboutFounderSection
+  ProcessSection
+  PortfolioSection
+  SectorsSection
+  WhyUsSection
+  FAQsSection
+  TestimonialsSection
+  ContactSection
+  Footer
+
+Why this is “server-first” friendly:
+- The page itself is a Server Component by default.
+- Only interactive sections/components are marked "use client".
+  This is the React Server Components model: keep client JS minimal.
+
+Section component folder:
+  src/components/sections/
+
+Key components:
+- Navbar.tsx
+  Fixed top bar, anchor links, mobile slide-down drawer, includes DarkModeToggle.
+
+- DarkModeToggle.tsx
+  Uses next-themes: toggles `theme` between “light” and “dark”.
+  It waits until mounted to avoid hydration mismatch.
+
+- Hero.tsx
+  Full-viewport hero with gradient background, CTA buttons, subtle parallax via framer-motion.
+
+- Section.tsx
+  A small wrapper that standardizes spacing and scroll offset.
+  It uses `scroll-mt-24` so clicking anchors doesn’t hide content under the fixed navbar.
+
+- Services.tsx
+  Uses Cards and Badges. Uses container queries (`@container`, `@md:grid-cols-2`, etc.)
+  so layout responds to container width.
+
+- AboutFounder.tsx
+  Founder summary + contact info + skill badges (verbatim summary preserved).
+
+- Process.tsx
+  Step cards (1–5) describing the process.
+
+- Portfolio.tsx
+  Masonry grid with hover overlay.
+
+- Sectors.tsx
+  Dark section with “trust stats” and sector cards.
+
+- WhyUs.tsx
+  Trust-building bullet cards.
+
+- FAQs.tsx
+  Accessible accordion.
+
+- Testimonials.tsx
+  Carousel using react-slick; imports slick-carousel CSS.
+
+- Contact.tsx
+  Formik + Yup form, TanStack Query mutation sending to /api/contact.
+  Also shows direct contact info + Google Maps iframe embed.
+
+- Footer.tsx
+  Basic footer links and copyright.
+
+
+9) Full-stack integration: API route for form submission
+--------------------------------------------------------
+File:
+  src/app/api/contact/route.ts
+
+Key lines:
+- export const runtime = "edge";
+  Deploy-friendly: can run on Edge runtime (fast cold starts).
+
+- export async function POST(req: Request)
+  Next.js App Router API route handler for POST requests.
+
+- const body = await req.json()
+  Parses the JSON payload from the frontend.
+
+- Basic required field checks
+  Returns 400 for missing fields.
+
+- console.log("[contact]", ...)
+  Placeholder for sending email or saving to DB.
+
+Production refactor path:
+- Add rate limiting + spam protection
+- Persist to DB (Prisma) and/or send via transactional email provider
+
+
+10) Why the build got “stuck” in tooling (FYI)
+----------------------------------------------
+During the automated build, Next build appeared to keep running and created a lock:
+  .next/lock
+
+Because of sandbox restrictions, the agent couldn’t kill that background process.
+For you locally, you can just:
+- stop the process in your terminal
+- delete `.next/` if needed
+- run `pnpm build` again
+
+
+11) Where to look next (learning path)
+--------------------------------------
+If you’re a backend dev moving to full-stack, read in this order:
+
+1) src/app/page.tsx
+   Understand composition: how the page is just “sections arranged”.
+
+2) src/components/sections/Section.tsx
+   Learn “layout wrappers” and how teams standardize spacing.
+
+3) src/app/providers.tsx
+   Learn app-level providers and why they must be Client Components.
+
+4) src/lib/data.ts
+   Learn the typed “data model” approach (your backend strength).
+
+5) src/components/sections/Contact.tsx + src/app/api/contact/route.ts
+   Learn the full-stack loop:
+   UI -> validation -> mutation -> API -> response.
+
+6) src/components/ui/button.tsx
+   Learn “design system” patterns (variants + asChild).
+
+
+12) Quick run commands
+----------------------
+Dev server:
+  pnpm dev
+
+Lint:
+  pnpm lint
+
+Build:
+  pnpm build
+
+
+End.
+

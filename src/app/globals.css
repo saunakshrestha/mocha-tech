@@ -1,26 +1,126 @@
 @import "tailwindcss";
 
+/*
+  Global styles + design tokens.
+
+  80/20 career note:
+  Most enterprise full-stack roles expect you to understand "design tokens"
+  (CSS variables) so the UI can be themed and scaled consistently.
+*/
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --radius: 24px; /* Modern rounded corners */
+
+  /* shadcn-style semantic tokens (HSL makes it easy to adjust) */
+  --background: 48 33% 97%;
+  --foreground: 24 22% 12%;
+
+  --card: 48 33% 98%;
+  --card-foreground: 24 22% 12%;
+
+  --popover: 48 33% 98%;
+  --popover-foreground: 24 22% 12%;
+
+  /* Brand-driven primary/secondary (mocha vibes) */
+  --primary: 24 34% 33%; /* mocha primary ~ #6F4E37 */
+  --primary-foreground: 48 33% 96%;
+
+  --secondary: 34 42% 70%; /* beige ~ #D2B48C */
+  --secondary-foreground: 24 22% 12%;
+
+  --muted: 40 25% 92%;
+  --muted-foreground: 24 10% 35%;
+
+  --accent: 24 69% 48%; /* orange ~ #D2691E */
+  --accent-foreground: 48 33% 96%;
+
+  --border: 30 20% 84%;
+  --input: 30 20% 84%;
+  --ring: 24 69% 48%;
+}
+
+.dark {
+  --background: 24 25% 8%;
+  --foreground: 48 33% 96%;
+
+  --card: 24 25% 10%;
+  --card-foreground: 48 33% 96%;
+
+  --popover: 24 25% 10%;
+  --popover-foreground: 48 33% 96%;
+
+  --primary: 34 42% 70%;
+  --primary-foreground: 24 25% 10%;
+
+  --secondary: 24 34% 22%;
+  --secondary-foreground: 48 33% 96%;
+
+  --muted: 24 20% 14%;
+  --muted-foreground: 34 25% 80%;
+
+  --accent: 24 69% 52%;
+  --accent-foreground: 24 25% 10%;
+
+  --border: 24 18% 20%;
+  --input: 24 18% 20%;
+  --ring: 24 69% 52%;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-roboto);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* --- Modern clean gradients inspired by 2024-2026 trends --- */
+
+/* Soft, organic gradient background - less busy, more elegant */
+.coffee-texture {
+  background-color: #fdfcfb;
+  background-image:
+    radial-gradient(ellipse 140% 100% at 20% 10%, rgba(255, 237, 220, 0.5), transparent 60%),
+    radial-gradient(ellipse 100% 120% at 80% 90%, rgba(245, 235, 220, 0.4), transparent 55%);
+}
+
+.dark .coffee-texture {
+  background-color: #1a1410;
+  background-image:
+    radial-gradient(ellipse 120% 80% at 10% 20%, rgba(111, 78, 55, 0.35), transparent 50%),
+    radial-gradient(ellipse 100% 60% at 90% 70%, rgba(210, 105, 30, 0.12), transparent 45%);
+}
+
+/* Animated steam: gentle rise for mocha atmosphere */
+@keyframes steam-rise {
+  0%, 100% { opacity: 0.4; transform: translateY(0) scale(1); }
+  50% { opacity: 0.7; transform: translateY(-8px) scale(1.02); }
+}
+
+@keyframes steam-drift {
+  0%, 100% { transform: translateX(0) translateY(0); }
+  33% { transform: translateX(4px) translateY(-4px); }
+  66% { transform: translateX(-2px) translateY(-6px); }
+}
+
+.steam-1 { animation: steam-rise 6s ease-in-out infinite; }
+.steam-2 { animation: steam-rise 7s ease-in-out 1s infinite; }
+.steam-3 { animation: steam-rise 5.5s ease-in-out 2s infinite; }
+.steam-drift { animation: steam-drift 8s ease-in-out infinite; }
+
+/* Removed .mocha-pattern - cleaner, less busy modern approach */
+
+/* Warm overlay for image areas to tie into mocha palette */
+.mocha-overlay {
+  background: linear-gradient(180deg, rgba(111, 78, 55, 0.15) 0%, transparent 50%);
 }

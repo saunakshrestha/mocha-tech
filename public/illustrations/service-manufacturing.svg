@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400" fill="none">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#E3F2FD"/>
+  
+  <!-- Factory building -->
+  <rect x="100" y="150" width="180" height="150" fill="#607D8B"/>
+  <rect x="320" y="150" width="180" height="150" fill="#546E7A"/>
+  
+  <!-- Smokestacks -->
+  <rect x="140" y="100" width="30" height="50" fill="#78909C"/>
+  <rect x="200" y="80" width="30" height="70" fill="#78909C"/>
+  <rect x="360" y="90" width="30" height="60" fill="#78909C"/>
+  <rect x="430" y="110" width="30" height="40" fill="#78909C"/>
+  
+  <!-- Smoke -->
+  <circle cx="155" cy="85" r="15" fill="#CFD8DC" opacity="0.6"/>
+  <circle cx="170" cy="75" r="18" fill="#CFD8DC" opacity="0.5"/>
+  <circle cx="215" cy="65" r="20" fill="#CFD8DC" opacity="0.6"/>
+  <circle cx="230" cy="55" r="18" fill="#CFD8DC" opacity="0.5"/>
+  <circle cx="375" cy="75" r="16" fill="#CFD8DC" opacity="0.6"/>
+  <circle cx="445" cy="95" r="14" fill="#CFD8DC" opacity="0.6"/>
+  
+  <!-- Windows -->
+  <rect x="120" y="170" width="30" height="35" fill="#FFD54F"/>
+  <rect x="170" y="170" width="30" height="35" fill="#FFD54F"/>
+  <rect x="220" y="170" width="30" height="35" fill="#FFD54F"/>
+  <rect x="120" y="220" width="30" height="35" fill="#FFD54F"/>
+  <rect x="170" y="220" width="30" height="35" fill="#FFD54F"/>
+  <rect x="220" y="220" width="30" height="35" fill="#FFD54F"/>
+  
+  <rect x="340" y="170" width="30" height="35" fill="#FFA726"/>
+  <rect x="390" y="170" width="30" height="35" fill="#FFA726"/>
+  <rect x="440" y="170" width="30" height="35" fill="#FFA726"/>
+  <rect x="340" y="220" width="30" height="35" fill="#FFA726"/>
+  <rect x="390" y="220" width="30" height="35" fill="#FFA726"/>
+  <rect x="440" y="220" width="30" height="35" fill="#FFA726"/>
+  
+  <!-- Doors -->
+  <rect x="150" y="260" width="40" height="40" fill="#37474F"/>
+  <rect x="400" y="260" width="40" height="40" fill="#263238"/>
+  
+  <!-- Ground -->
+  <rect y="300" width="600" height="100" fill="#BCAAA4"/>
+  <rect x="50" y="310" width="500" height="5" fill="#8D6E63"/>
+  
+  <!-- Gear icon -->
+  <circle cx="550" cy="80" r="30" fill="#FF6B35" opacity="0.3"/>
+  <circle cx="550" cy="80" r="18" fill="#FF6B35"/>
+  <circle cx="550" cy="80" r="8" fill="white"/>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" fill="none">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#E0F2F1"/>
+  
+  <!-- Isometric structure -->
+  <g transform="translate(400, 250)">
+    <!-- Base platform -->
+    <path d="M -200 50 L 0 -50 L 200 50 L 0 150 Z" fill="#78909C"/>
+    <path d="M -200 50 L 0 150 L 0 170 L -200 70 Z" fill="#546E7A"/>
+    <path d="M 200 50 L 0 150 L 0 170 L 200 70 Z" fill="#607D8B"/>
+    
+    <!-- Vertical columns -->
+    <rect x="-180" y="-100" width="20" height="150" fill="#FF6B35"/>
+    <rect x="-90" y="-100" width="20" height="150" fill="#FF6B35"/>
+    <rect x="0" y="-100" width="20" height="150" fill="#FF6B35"/>
+    <rect x="90" y="-100" width="20" height="150" fill="#FF6B35"/>
+    <rect x="170" y="-100" width="20" height="150" fill="#FF6B35"/>
+    
+    <!-- Top platform -->
+    <path d="M -200 -100 L 0 -200 L 200 -100 L 0 0 Z" fill="#90CAF9"/>
+    <path d="M -200 -100 L 0 0 L 0 20 L -200 -80 Z" fill="#64B5F6"/>
+    <path d="M 200 -100 L 0 0 L 0 20 L 200 -80 Z" fill="#42A5F5"/>
+    
+    <!-- Equipment on top -->
+    <rect x="-80" y="-180" width="60" height="40" fill="#FFD54F"/>
+    <rect x="-70" y="-200" width="15" height="20" fill="#FFA726"/>
+    <rect x="-45" y="-200" width="15" height="20" fill="#FFA726"/>
+    
+    <rect x="40" y="-190" width="80" height="50" fill="#4CAF50"/>
+    <rect x="55" y="-215" width="20" height="25" fill="#388E3C"/>
+    
+    <!-- Stairs -->
+    <rect x="-210" y="40" width="30" height="5" fill="#9E9E9E"/>
+    <rect x="-210" y="50" width="30" height="5" fill="#757575"/>
+    <rect x="-210" y="60" width="30" height="5" fill="#9E9E9E"/>
+    <rect x="-210" y="70" width="30" height="5" fill="#757575"/>
+    <rect x="-210" y="80" width="30" height="5" fill="#9E9E9E"/>
+    
+    <!-- Piping -->
+    <line x1="-150" y1="-50" x2="-150" y2="50" stroke="#424242" stroke-width="6"/>
+    <line x1="120" y1="-50" x2="120" y2="50" stroke="#424242" stroke-width="6"/>
+    
+    <!-- Support beams -->
+    <line x1="-180" y1="-90" x2="180" y2="-90" stroke="#E65100" stroke-width="4"/>
+    <line x1="-180" y1="-60" x2="180" y2="-60" stroke="#E65100" stroke-width="4"/>
+    <line x1="-180" y1="-30" x2="180" y2="-30" stroke="#E65100" stroke-width="4"/>
+  </g>
+  
+  <!-- Grid lines -->
+  <line x1="50" y1="450" x2="750" y2="450" stroke="#9E9E9E" stroke-width="2"/>
+  <line x1="100" y1="440" x2="100" y2="460" stroke="#9E9E9E" stroke-width="2"/>
+  <line x1="700" y1="440" x2="700" y2="460" stroke="#9E9E9E" stroke-width="2"/>
+  
+  <!-- Human scale figure -->
+  <circle cx="320" cy="370" r="8" fill="#FFB6B6"/>
+  <rect x="316" y="378" width="8" height="15" fill="#2196F3"/>
+  <line x1="318" y1="393" x2="315" y2="405" stroke="#424242" stroke-width="2"/>
+  <line x1="322" y1="393" x2="325" y2="405" stroke="#424242" stroke-width="2"/>
+</svg>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="768" height="768" viewBox="0 0 768 768" fill="none">
+  <!-- Background cityscape -->
+  <rect x="0" y="0" width="768" height="300" fill="#C5E3F6" opacity="0.3"/>
+  <rect x="120" y="80" width="60" height="150" fill="#5A9FD4" opacity="0.4"/>
+  <rect x="220" y="50" width="50" height="180" fill="#5A9FD4" opacity="0.5"/>
+  <rect x="310" y="100" width="40" height="130" fill="#5A9FD4" opacity="0.4"/>
+  <rect x="390" y="60" width="70" height="170" fill="#5A9FD4" opacity="0.5"/>
+  <rect x="500" y="90" width="55" height="140" fill="#5A9FD4" opacity="0.4"/>
+  <circle cx="460" cy="45" r="15" fill="#5A9FD4" opacity="0.4"/>
+  
+  <!-- Grid lines -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E0E0E0" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <rect width="768" height="768" fill="url(#grid)"/>
+  
+  <!-- Monitor/Screen -->
+  <rect x="100" y="260" width="650" height="380" fill="white" stroke="#BDBDBD" stroke-width="3" rx="10"/>
+  <rect x="115" y="275" width="620" height="340" fill="#1A3A52"/>
+  
+  <!-- CAD Drawing on screen -->
+  <g stroke="#5A9FD4" stroke-width="2" fill="none">
+    <!-- Floor plan outline -->
+    <rect x="150" y="310" width="250" height="280" />
+    <line x1="250" y1="310" x2="250" y2="450"/>
+    <line x1="150" y1="450" x2="400" y2="450"/>
+    <line x1="320" y1="450" x2="320" y2="590"/>
+    
+    <!-- Rooms -->
+    <rect x="160" y="320" width="80" height="60"/>
+    <rect x="160" y="390" width="80" height="50"/>
+    <rect x="260" y="320" width="130" height="120"/>
+    <rect x="160" y="460" width="150" height="120"/>
+    <rect x="330" y="460" width="60" height="120"/>
+    
+    <!-- Furniture symbols -->
+    <circle cx="195" cy="350" r="15"/>
+    <rect x="270" y="370" width="40" height="50" stroke-width="1"/>
+    <line x1="170" y1="510" x2="230" y2="510" stroke-width="1"/>
+    <rect x="175" y="515" width="50" height="20" stroke-width="1"/>
+    <circle cx="355" cy="520" r="20" stroke-width="1"/>
+  </g>
+  
+  <!-- Monitor stand -->
+  <rect x="320" y="640" width="128" height="15" fill="#E0E0E0"/>
+  <rect x="360" y="655" width="48" height="60" fill="#E0E0E0"/>
+  <rect x="260" y="715" width="248" height="8" fill="#BDBDBD"/>
+  
+  <!-- Desk surface -->
+  <rect x="0" y="710" width="768" height="58" fill="#E8F4FA"/>
+  
+  <!-- Hands/Arms -->
+  <ellipse cx="250" cy="680" rx="40" ry="20" fill="#FFB6B6"/>
+  <rect x="220" y="655" width="60" height="25" fill="#FFB6B6"/>
+  
+  <ellipse cx="520" cy="680" rx="40" ry="20" fill="#FFB6B6"/>
+  <rect x="490" y="655" width="60" height="25" fill="#FFB6B6"/>
+  
+  <!-- Drawing tools -->
+  <rect x="180" y="320" width="25" height="5" fill="#FFD54F" transform="rotate(-25 192.5 322.5)"/>
+  <polygon points="192,315 197,322 187,322" fill="#FFD54F"/>
+  
+  <rect x="450" y="335" width="35" height="6" fill="#2E5C7F"/>
+  <circle cx="450" cy="338" r="8" fill="#E53935"/>
+  
+  <!-- Compass/tools on desk -->
+  <line x1="620" y1="730" x2="635" y2="755" stroke="#757575" stroke-width="3"/>
+  <line x1="650" y1="730" x2="635" y2="755" stroke="#757575" stroke-width="3"/>
+  <circle cx="635" cy="725" r="5" fill="#757575"/>
+  
+  <!-- Pencils -->
+  <rect x="90" y="725" width="8" height="35" fill="#2E5C7F"/>
+  <polygon points="94,720 90,725 98,725" fill="#FFB6B6"/>
+  
+  <rect x="105" y="730" width="8" height="30" fill="#E53935"/>
+  <polygon points="109,725 105,730 113,730" fill="#FFB6B6"/>
+  
+  <!-- Mouse -->
+  <ellipse cx="700" cy="745" rx="25" ry="35" fill="white" stroke="#BDBDBD" stroke-width="2"/>
+  <line x1="700" y1="725" x2="700" y2="745" stroke="#BDBDBD" stroke-width="1.5"/>
+</svg>

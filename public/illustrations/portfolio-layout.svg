@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" fill="none">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#FFF8E1"/>
+  
+  <!-- Plant layout -->
+  <rect x="100" y="100" width="600" height="300" fill="none" stroke="#424242" stroke-width="3"/>
+  
+  <!-- Rooms/areas -->
+  <rect x="100" y="100" width="200" height="150" fill="#E3F2FD" stroke="#424242" stroke-width="2"/>
+  <rect x="300" y="100" width="200" height="150" fill="#F3E5F5" stroke="#424242" stroke-width="2"/>
+  <rect x="500" y="100" width="200" height="150" fill="#E8F5E9" stroke="#424242" stroke-width="2"/>
+  <rect x="100" y="250" width="300" height="150" fill="#FFF3E0" stroke="#424242" stroke-width="2"/>
+  <rect x="400" y="250" width="300" height="150" fill="#FCE4EC" stroke="#424242" stroke-width="2"/>
+  
+  <!-- Equipment symbols -->
+  <circle cx="200" cy="175" r="30" fill="#2196F3" opacity="0.6"/>
+  <rect x="185" y="160" width="30" height="30" fill="none" stroke="white" stroke-width="2"/>
+  
+  <rect x="370" y="145" width="60" height="60" fill="#9C27B0" opacity="0.6" rx="4"/>
+  <circle cx="400" cy="175" r="15" fill="white" opacity="0.8"/>
+  
+  <polygon points="600,145 630,175 600,205 570,175" fill="#4CAF50" opacity="0.6"/>
+  
+  <!-- Conveyors -->
+  <rect x="150" y="310" width="200" height="20" fill="#FF9800" opacity="0.6"/>
+  <rect x="155" y="312" width="15" height="16" fill="#424242"/>
+  <rect x="180" y="312" width="15" height="16" fill="#424242"/>
+  <rect x="205" y="312" width="15" height="16" fill="#424242"/>
+  <rect x="230" y="312" width="15" height="16" fill="#424242"/>
+  <rect x="255" y="312" width="15" height="16" fill="#424242"/>
+  <rect x="280" y="312" width="15" height="16" fill="#424242"/>
+  <rect x="305" y="312" width="15" height="16" fill="#424242"/>
+  <rect x="330" y="312" width="15" height="16" fill="#424242"/>
+  
+  <!-- Tanks -->
+  <circle cx="480" cy="325" r="40" fill="none" stroke="#FF6B35" stroke-width="3"/>
+  <circle cx="480" cy="325" r="30" fill="none" stroke="#FF6B35" stroke-width="2"/>
+  
+  <circle cx="600" cy="325" r="40" fill="none" stroke="#FF6B35" stroke-width="3"/>
+  <circle cx="600" cy="325" r="30" fill="none" stroke="#FF6B35" stroke-width="2"/>
+  
+  <!-- Piping -->
+  <path d="M 300 175 L 350 175 L 350 250" stroke="#616161" stroke-width="4" fill="none"/>
+  <path d="M 500 175 L 550 175 L 550 325" stroke="#616161" stroke-width="4" fill="none"/>
+  <path d="M 400 250 L 400 280 L 480 280" stroke="#616161" stroke-width="4" fill="none"/>
+  
+  <!-- Dimension lines -->
+  <line x1="100" y1="420" x2="700" y2="420" stroke="#E91E63" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="100" y1="415" x2="100" y2="425" stroke="#E91E63" stroke-width="2"/>
+  <line x1="700" y1="415" x2="700" y2="425" stroke="#E91E63" stroke-width="2"/>
+  
+  <!-- North arrow -->
+  <circle cx="50" cy="50" r="30" fill="white" stroke="#424242" stroke-width="2"/>
+  <polygon points="50,30 55,50 50,45 45,50" fill="#E91E63"/>
+  <text x="50" y="70" text-anchor="middle" font-size="14" fill="#424242" font-weight="bold">N</text>
+</svg>

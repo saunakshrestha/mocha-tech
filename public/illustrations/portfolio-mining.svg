@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" fill="none">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#1A237E" opacity="0.05"/>
+  
+  <!-- Mining site terrain -->
+  <path d="M 0 350 Q 200 320 400 340 Q 600 360 800 330 L 800 500 L 0 500 Z" fill="#8D6E63"/>
+  <path d="M 0 370 Q 200 340 400 360 Q 600 380 800 350 L 800 500 L 0 500 Z" fill="#A1887F"/>
+  
+  <!-- Mining truck -->
+  <rect x="450" y="310" width="120" height="50" fill="#FFD54F"/>
+  <rect x="430" y="290" width="80" height="25" fill="#FFA726"/>
+  <circle cx="465" cy="365" r="18" fill="#212121"/>
+  <circle cx="465" cy="365" r="10" fill="#616161"/>
+  <circle cx="555" cy="365" r="18" fill="#212121"/>
+  <circle cx="555" cy="365" r="10" fill="#616161"/>
+  <rect x="445" y="300" width="25" height="15" fill="#81D4FA"/>
+  
+  <!-- Excavator -->
+  <rect x="200" y="320" width="70" height="40" fill="#FF6B35"/>
+  <rect x="180" y="310" width="50" height="15" fill="#FF8A5C"/>
+  <rect x="190" y="315" width="20" height="10" fill="#81D4FA"/>
+  <circle cx="215" cy="365" r="15" fill="#212121"/>
+  <circle cx="255" cy="365" r="15" fill="#212121"/>
+  
+  <!-- Excavator arm -->
+  <rect x="240" y="280" width="12" height="60" fill="#424242" transform="rotate(-30 246 310)"/>
+  <rect x="265" y="240" width="10" height="50" fill="#424242" transform="rotate(-60 270 265)"/>
+  <rect x="285" y="220" width="35" height="12" fill="#616161"/>
+  
+  <!-- Processing plant -->
+  <rect x="50" y="200" width="100" height="150" fill="#546E7A"/>
+  <rect x="70" y="180" width="20" height="25" fill="#607D8B"/>
+  <rect x="100" y="170" width="20" height="35" fill="#607D8B"/>
+  <rect x="130" y="190" width="15" height="15" fill="#607D8B"/>
+  
+  <!-- Plant windows -->
+  <rect x="70" y="220" width="20" height="25" fill="#FFD54F"/>
+  <rect x="100" y="220" width="20" height="25" fill="#FFD54F"/>
+  <rect x="70" y="260" width="20" height="25" fill="#FFD54F"/>
+  <rect x="100" y="260" width="20" height="25" fill="#FFD54F"/>
+  
+  <!-- Conveyor belt -->
+  <rect x="150" y="280" width="150" height="15" fill="#757575" transform="rotate(-10 225 287.5)"/>
+  <rect x="280" y="265" width="50" height="15" fill="#757575"/>
+  
+  <!-- Stockpile -->
+  <path d="M 600 350 L 650 300 L 700 350 Z" fill="#8D6E63"/>
+  <path d="M 610 350 L 650 315 L 690 350 Z" fill="#6D4C41"/>
+  
+  <!-- Sky elements -->
+  <circle cx="700" cy="80" r="40" fill="#FFD54F" opacity="0.4"/>
+  <circle cx="120" cy="100" r="30" fill="#BDBDBD" opacity="0.3"/>
+  <circle cx="150" cy="90" r="35" fill="#BDBDBD" opacity="0.3"/>
+</svg>
