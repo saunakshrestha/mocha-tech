@@ -34,3 +34,14 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Deploy on Netlify
+
+This project is configured for deployment on Netlify. See the [NETLIFY_DEPLOYMENT.md](./NETLIFY_DEPLOYMENT.md) guide for detailed instructions.
+
+Quick steps:
+1. Connect your repository to Netlify
+2. Netlify will automatically detect the `netlify.toml` configuration
+3. Deploy!
+
+The configuration includes the `@netlify/plugin-nextjs` which prevents 404 errors by properly handling Next.js routing.
