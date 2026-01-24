@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
-import { Menu, X, Coffee } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
@@ -34,9 +35,13 @@ export function Navbar() {
           href="#home"
           className="flex items-center gap-2 font-[var(--font-heading)] text-base font-semibold tracking-tight"
         >
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-orange-400 to-amber-400">
-            <Coffee className="h-5 w-5 text-white" />
-          </span>
+          <Image 
+            src="/company-logo.svg" 
+            alt="MochaTech Logo" 
+            width={48} 
+            height={48}
+            className="h-12 w-12"
+          />
           <span className="text-[#2d1f1a]">MochaTech Pty Ltd</span>
         </Link>
 
