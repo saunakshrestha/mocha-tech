@@ -12,7 +12,7 @@ import containerQueries from "@tailwindcss/container-queries";
  * responsive components, and motion polish.
  */
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: "class",
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
