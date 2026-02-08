@@ -30,19 +30,20 @@ export function Navbar() {
       animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       className="fixed inset-x-0 top-0 z-50 border-b border-orange-200/40 bg-white/80 backdrop-blur-md shadow-sm"
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-0.5">
         <Link
           href="#home"
-          className="flex items-center gap-2 font-[var(--font-heading)] text-base font-semibold tracking-tight"
+          className="flex items-center -my-2 ml-2 md:ml-0"
         >
           <Image 
             src="/company-logo.svg" 
             alt="MochaTech Logo" 
-            width={64} 
-            height={64}
-            className="h-16 w-16"
+            width={140} 
+            height={140}
+            className="h-[90px] w-auto scale-150"
+            style={{ objectFit: 'contain' }}
+            priority
           />
-          <span className="text-[#2d1f1a]">MochaTech Pty Ltd</span>
         </Link>
 
         <nav className="hidden items-center gap-5 md:flex">
