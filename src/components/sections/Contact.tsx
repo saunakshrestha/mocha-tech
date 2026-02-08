@@ -15,6 +15,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 type ContactPayload = {
   name: string;
   email: string;
+  phone: string;
+  company: string;
   projectDetails: string;
   message: string;
 };
@@ -22,6 +24,8 @@ type ContactPayload = {
 const schema = Yup.object({
   name: Yup.string().required("Name is required"),
   email: Yup.string().email("Enter a valid email").required("Email is required"),
+  phone: Yup.string(),
+  company: Yup.string(),
   projectDetails: Yup.string(),
   message: Yup.string().required("Message is required"),
 });
@@ -53,11 +57,11 @@ export function ContactSection() {
         className="flex flex-col gap-3"
       >
         <h2 className="font-[var(--font-heading)] text-3xl font-bold text-[#2d1f1a] sm:text-4xl lg:text-5xl">
-          Contact
+          Contact Us
         </h2>
         <p className="max-w-2xl text-lg text-foreground/65">
-          Send your brief and we’ll respond with a tailored quote. (AI-ready hint:
-          include deliverables, deadlines, and standards.)        </p>      </motion.div>
+          We deliver expert electrical CAD solutions from Nepal to clients across Australia and worldwide. Get in touch with us for project inquiries or quotations.
+        </p>
 
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
         <Card className="border-orange-100/50 bg-white shadow-sm">
@@ -69,6 +73,8 @@ export function ContactSection() {
               initialValues={{
                 name: "",
                 email: "",
+                phone: "",
+                company: "",
                 projectDetails: "",
                 message: "",
               }}
@@ -103,6 +109,25 @@ export function ContactSection() {
                     error={touched.email ? errors.email : undefined}
                     onChange={handleChange}
                     onBlur={handleBlur}
+                  />
+                  <Field
+                    label="Phone (Optional)"
+                    name="phone"
+                    type="tel"
+                    value={values.phone}
+                    error={touched.phone ? errors.phone : undefined}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="e.g. +61 400 000 000"
+                  />
+                  <Field
+                    label="Company (Optional)"
+                    name="company"
+                    value={values.company}
+                    error={touched.company ? errors.company : undefined}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Your company or organization name"
                   />
                   <Field
                     label="Project Details"
@@ -148,46 +173,78 @@ export function ContactSection() {
         <div className="space-y-6">
           <Card className="border-orange-100/50 bg-white shadow-sm">
             <CardHeader>
-              <CardTitle>Direct details</CardTitle>
+              <CardTitle>Our Locations</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-sm text-foreground/80">
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-mocha-orange" />
-                <span>{founderProfile.contact.location}</span>
+            <CardContent className="space-y-4 text-sm text-foreground/80">
+              <div>
+                <div className="flex items-start gap-2">
+                  <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-mocha-orange" />
+                  <div>
+                    <p className="font-semibold text-mocha-primary">Nepal (Primary Operations & Team)</p>
+                    <p className="text-xs text-muted-foreground">Main drafting and design hub</p>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 text-mocha-orange" />
-                <span>{founderProfile.contact.phone}</span>
+              <div>
+                <div className="flex items-start gap-2">
+                  <MapPin className="mt-0.5 h-4 w-4 flex-shrink-0 text-mocha-orange" />
+                  <div>
+                    <p className="font-semibold text-mocha-primary">Australia (Client Coordination)</p>
+                    <p className="text-xs text-muted-foreground">Local contact for project alignment and support</p>
+                    <p className="mt-1">{founderProfile.contact.location}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="border-t pt-3">
+                <div className="flex items-center gap-2">
+                  <Phone className="h-4 w-4 text-mocha-orange" />
+                  <span>{founderProfile.contact.phone}</span>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-mocha-orange" />
                 <span>{founderProfile.contact.email}</span>
               </div>
-              <div className="pt-3 text-xs text-muted-foreground">
-                Book a Call (Calendly placeholder)
+              <div className="border-t pt-3">
+                <p className="text-sm font-medium text-mocha-primary">
+                  Get a fast, cost-effective CAD solution today—connect with our team in Nepal or coordinate via our Australian support channel.
+                </p>
               </div>
             </CardContent>
           </Card>
 
           <Card className="border-orange-100/50 bg-white shadow-sm">
             <CardHeader>
-              <CardTitle>Perth map</CardTitle>
+              <CardTitle>Our Global Reach</CardTitle>
             </CardHeader>
             <CardContent>
-              {/* No API key needed for a basic embed; swap to @react-google-maps/api for full control. */}
-              <div className="aspect-[16/10] w-full overflow-hidden rounded-xl border border-border bg-muted">
-                <iframe
-                  title="Perth map"
-                  className="h-full w-full"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.google.com/maps?q=Perth%20WA&output=embed"
-                />
+              <div className="grid grid-cols-2 gap-3">
+                <div className="aspect-square overflow-hidden rounded-lg border border-border bg-muted">
+                  <iframe
+                    title="Nepal Operations Hub"
+                    className="h-full w-full"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=Kathmandu,Nepal&output=embed&z=6"
+                    style={{ border: 0 }}
+                  />
+                </div>
+                <div className="aspect-square overflow-hidden rounded-lg border border-border bg-muted">
+                  <iframe
+                    title="Australia Client Coordination"
+                    className="h-full w-full"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps?q=Perth,Western+Australia&output=embed&z=8"
+                    style={{ border: 0 }}
+                  />
+                </div>
               </div>
-              <p className="mt-3 text-xs text-muted-foreground">
-                Refactor suggestion (production): use `@react-google-maps/api` with a restricted key
-                and load it only when this section is in-view to keep performance high.
-              </p>
+              <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
+                <span>🇳🇵 Nepal (Operations)</span>
+                <span>→</span>
+                <span>🇦🇺 Australia (Coordination)</span>
+              </div>
             </CardContent>
           </Card>
         </div>
