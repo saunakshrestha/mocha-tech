@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -60,7 +61,7 @@ export function ContactSection() {
           Contact Us
         </h2>
         <p className="max-w-2xl text-lg text-foreground/65">
-          We deliver expert electrical CAD solutions from Nepal to clients across Australia and worldwide. Get in touch with us for project inquiries or quotations.
+          Expert electrical CAD solutions from Nepal to the world.
         </p>
 
       <div className="mt-10 grid gap-6 lg:grid-cols-2">
@@ -218,27 +219,14 @@ export function ContactSection() {
               <CardTitle>Our Global Reach</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="aspect-square overflow-hidden rounded-lg border border-border bg-muted">
-                  <iframe
-                    title="Nepal Operations Hub"
-                    className="h-full w-full"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps?q=Kathmandu,Nepal&output=embed&z=6"
-                    style={{ border: 0 }}
-                  />
-                </div>
-                <div className="aspect-square overflow-hidden rounded-lg border border-border bg-muted">
-                  <iframe
-                    title="Australia Client Coordination"
-                    className="h-full w-full"
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps?q=Perth,Western+Australia&output=embed&z=8"
-                    style={{ border: 0 }}
-                  />
-                </div>
+              <div className="relative aspect-video w-full overflow-hidden rounded-lg border border-border bg-muted">
+                <Image
+                  src="/extras/neptoaus.png"
+                  alt="Nepal to Australia - Our global operations connecting Nepal's expert team with Australian clients"
+                  fill
+                  className="object-cover"
+                  priority={false}
+                />
               </div>
               <div className="mt-3 flex items-center justify-between text-xs text-muted-foreground">
                 <span>🇳🇵 Nepal (Operations)</span>
@@ -249,6 +237,7 @@ export function ContactSection() {
           </Card>
         </div>
       </div>
+      </motion.div>
     </Section>
   );
 }
