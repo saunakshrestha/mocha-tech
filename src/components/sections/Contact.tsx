@@ -102,16 +102,16 @@ export function ContactSection() {
             </CardContent>
           </Card>
 
-          <Card className="border-orange-100/50 bg-white shadow-sm">
+          <Card className="border-orange-200/70 bg-orange-50/50 shadow-sm">
             <CardHeader>
-              <CardTitle>Need Something Else?</CardTitle>
+              <CardTitle className="italic text-mocha-primary">Need Something Else?</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-3 text-sm text-foreground/80">
-              <p>
+            <CardContent className="space-y-3 text-sm text-foreground/85">
+              <p className="italic">
                 • Prefer direct communication? Contact us by phone or email to discuss your project requirements and timelines.
               </p>
-              <p>
-                • Have drawings or a scope ready? Send them to our email: anjanshrestha57@gmail.com for a detailed review and quotation.
+              <p className="italic">
+                • Have drawings or a scope ready? Send them to our email anjanshrestha57@gmail.com for a detailed review and quotation.
               </p>
             </CardContent>
           </Card>
