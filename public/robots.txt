@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://mochatech.netlify.app/sitemap.xml
+Sitemap: https://mochatech.com.au/sitemap.xml

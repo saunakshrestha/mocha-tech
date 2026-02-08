@@ -3,37 +3,37 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: 'https://mochatech.netlify.app',
+      url: 'https://mochatech.com.au',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,
     },
     {
-      url: 'https://mochatech.netlify.app#services',
+      url: 'https://mochatech.com.au#services',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
-      url: 'https://mochatech.netlify.app#about',
+      url: 'https://mochatech.com.au#about',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: 'https://mochatech.netlify.app#process',
+      url: 'https://mochatech.com.au#process',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: 'https://mochatech.netlify.app#portfolio',
+      url: 'https://mochatech.com.au#portfolio',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.6,
     },
     {
-      url: 'https://mochatech.netlify.app#contact',
+      url: 'https://mochatech.com.au#contact',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.9,

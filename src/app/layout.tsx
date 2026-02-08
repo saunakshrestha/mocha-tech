@@ -17,7 +17,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mochatech.netlify.app'),
+  metadataBase: new URL('https://mochatech.com.au'),
   title: "MochaTech Pty Ltd | Electrical CAD Outsourcing (Perth, WA)",
   description:
     "Precision electrical CAD outsourcing for mining and resources clients in Western Australia. AutoCAD drafting, design & calculations, vendor coordination, and compliance-focused delivery.",
@@ -34,6 +34,17 @@ export const metadata: Metadata = {
   authors: [{ name: "MochaTech Pty Ltd" }],
   creator: "MochaTech Pty Ltd",
   publisher: "MochaTech Pty Ltd",
+  icons: {
+    icon: [
+      { url: '/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicons/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/favicons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+  manifest: '/favicons/site.webmanifest',
   robots: {
     index: true,
     follow: true,
@@ -47,7 +58,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_AU',
-    url: 'https://mochatech.netlify.app',
+    url: 'https://mochatech.com.au',
     siteName: 'MochaTech Pty Ltd',
     title: 'MochaTech Pty Ltd | Electrical CAD Outsourcing (Perth, WA)',
     description: 'Precision electrical CAD outsourcing for mining and resources clients in Western Australia.',
@@ -78,7 +89,7 @@ export default function RootLayout({
     '@type': 'ProfessionalService',
     name: 'MochaTech Pty Ltd',
     description: 'Precision electrical CAD outsourcing for mining and resources clients in Western Australia.',
-    url: 'https://mochatech.netlify.app',
+    url: 'https://mochatech.com.au',
     address: {
       '@type': 'PostalAddress',
       addressRegion: 'WA',
@@ -102,6 +113,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="theme-color" content="#6F4E37" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
