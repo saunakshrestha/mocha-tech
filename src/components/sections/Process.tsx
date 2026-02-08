@@ -28,8 +28,7 @@ export function ProcessSection() {
           Our Process (How It Works)
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-foreground/65">
-          Clear steps reduce risk and rework—especially important for mining and
-          brownfield work.
+          Clear, step-by-step workflow ensures accuracy, efficiency, and minimal risk.
         </p>
       </motion.div>
 

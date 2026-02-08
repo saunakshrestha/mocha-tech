@@ -25,8 +25,7 @@ export function SectorsSection() {
           Industries We Serve
         </h2>
         <p className="max-w-2xl text-mocha-cream/80">
-          We support delivery teams in WA and beyond with practical CAD packages
-          and engineering-focused documentation.
+          We deliver precise electrical CAD drafting and engineering documentation to support project teams across Australia and beyond, efficiently executed through our Nepal-based outsourcing model.
         </p>
 
         <motion.div
@@ -51,7 +50,7 @@ export function SectorsSection() {
         </motion.div>
       </motion.div>
 
-      <div className="@container mt-10 grid gap-6 @md:grid-cols-2 @xl:grid-cols-4">
+      <div className="@container mt-10 grid gap-4 @md:grid-cols-2 @xl:grid-cols-4">
         {sectors.map((s, idx) => {
           const Icon = icons[idx % icons.length];
           return (
@@ -63,15 +62,12 @@ export function SectorsSection() {
               transition={{ duration: 0.5, delay: idx * 0.08, ease: "easeOut" }}
             >
               <Card className="h-full border-mocha-cream/15 bg-mocha-cream/5 text-mocha-cream">
-                <CardHeader>
-                  <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-mocha-orange/25 text-mocha-cream">
+                <CardHeader className="flex flex-row items-center gap-3">
+                  <div className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-mocha-orange/25 text-mocha-cream">
                     <Icon />
                   </div>
-                  <CardTitle className="text-mocha-cream">{s.title}</CardTitle>
+                  <CardTitle className="text-base text-mocha-cream">{s.title}</CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm text-mocha-cream/80">
-                  {s.description}
-                </CardContent>
               </Card>
             </motion.div>
           );

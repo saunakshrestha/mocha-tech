@@ -8,28 +8,34 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const reasons = [
   {
+    title: "Cost-Effective Outsourcing",
+    description:
+      "Reduce engineering overhead without compromising quality—our Nepal-based team delivers expert CAD solutions at a fraction of local costs.",
+  },
+  {
     title: "Australian-Based Expertise",
     description:
-      "Perth delivery mindset, aligned to mining and resources project realities.",
+      "Aligned with local standards, timelines, and expectations—ensuring project requirements are always met.",
   },
   {
-    title: "Safety & Sustainability Focus",
+    title: "Fast Turnaround",
     description:
-      "Compliance-first outputs designed to support safe, sustainable operations.",
-  },
-  {
-    title: "Cost-Effective Outsourcing",
-    description: "Reduce engineering overhead while keeping quality high.",
+      "Quick, reliable delivery to keep your projects on schedule, without compromising accuracy.",
   },
   {
     title: "Collaborative Delivery",
     description:
-      "Site visits, FAT coordination, and clear cross-discipline communication.",
+      "Seamless coordination with your team, including reviews, design validation, and clear cross-discipline communication.",
+  },
+  {
+    title: "Scalable Solutions",
+    description:
+      "Flexible team size and resources to match project scope, whether small or large-scale.",
   },
   {
     title: "Tools Mastery",
     description:
-      "Power CAD, AutoCAD, ETAP, MicroStation, Navisworks and more as needed.",
+      "Proficient in Power CAD, AutoCAD, ETAP, MicroStation, Navisworks, and other industry-standard tools as needed.",
   },
 ] as const;
 
@@ -47,9 +53,7 @@ export function WhyUsSection() {
         <h2 className="font-[var(--font-heading)] text-3xl font-bold text-[#2d1f1a] sm:text-4xl lg:text-5xl">
           Why Choose MochaTech
         </h2>
-        <p className="mt-4 max-w-2xl text-lg text-foreground/65">
-          “Why us” is the highest-leverage section for B2B trust.
-        </p>
+
       </motion.div>
 
       <div className="@container mt-10 grid gap-6 @md:grid-cols-2 @xl:grid-cols-3">
@@ -75,11 +79,6 @@ export function WhyUsSection() {
           </motion.div>
         ))}
       </div>
-
-      <p className="mt-10 text-xs text-muted-foreground">
-        Refactor suggestion (production): add auth + audit logs around quote requests to meet common
-        enterprise security requirements.
-      </p>
     </Section>
   );
 }

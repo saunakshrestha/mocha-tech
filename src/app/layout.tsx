@@ -18,18 +18,20 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://mochatech.com.au'),
-  title: "MochaTech Pty Ltd | Electrical CAD Outsourcing (Perth, WA)",
+  title: "MochaTech Pty Ltd | Professional CAD Drafting & Outsourcing Services in Perth, WA",
   description:
-    "Precision electrical CAD outsourcing for mining and resources clients in Western Australia. AutoCAD drafting, design & calculations, vendor coordination, and compliance-focused delivery.",
+    "Budget-friendly AutoCAD designs with precise, efficient outsourcing for any industry. Professional CAD drafting services in Perth, WA – mining, resources, infrastructure, and more.",
   keywords: [
+    "CAD drafting Perth",
+    "AutoCAD drafting services",
     "electrical CAD outsourcing",
-    "AutoCAD drafting Perth",
-    "mining electrical design",
-    "resources sector CAD",
-    "electrical engineering WA",
-    "CAD services Western Australia",
-    "electrical calculations",
-    "compliance documentation",
+    "CAD services Perth WA",
+    "budget-friendly CAD design",
+    "mining CAD services",
+    "infrastructure CAD drafting",
+    "AutoCAD outsourcing Australia",
+    "professional CAD services",
+    "electrical design Perth",
   ],
   authors: [{ name: "MochaTech Pty Ltd" }],
   creator: "MochaTech Pty Ltd",
@@ -60,8 +62,8 @@ export const metadata: Metadata = {
     locale: 'en_AU',
     url: 'https://mochatech.com.au',
     siteName: 'MochaTech Pty Ltd',
-    title: 'MochaTech Pty Ltd | Electrical CAD Outsourcing (Perth, WA)',
-    description: 'Precision electrical CAD outsourcing for mining and resources clients in Western Australia.',
+    title: 'MochaTech Pty Ltd | Professional CAD Drafting & Outsourcing Services in Perth, WA',
+    description: 'Budget-friendly AutoCAD designs with precise, efficient outsourcing for any industry in Western Australia.',
     images: [
       {
         url: '/illustrations/hero-cad-workspace.webp',
@@ -73,8 +75,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'MochaTech Pty Ltd | Electrical CAD Outsourcing',
-    description: 'Precision electrical CAD outsourcing for mining and resources clients in Western Australia.',
+    title: 'MochaTech Pty Ltd | Professional CAD Drafting & Outsourcing',
+    description: 'Budget-friendly AutoCAD designs with precise, efficient outsourcing for any industry in Western Australia.',
     images: ['/illustrations/hero-cad-workspace.webp'],
   },
 };
@@ -88,7 +90,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'MochaTech Pty Ltd',
-    description: 'Precision electrical CAD outsourcing for mining and resources clients in Western Australia.',
+    description: 'Budget-friendly AutoCAD designs with precise, efficient outsourcing for any industry in Western Australia.',
     url: 'https://mochatech.com.au',
     address: {
       '@type': 'PostalAddress',

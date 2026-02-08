@@ -10,14 +10,11 @@ export type NavLink = { label: string; href: string };
 
 export const navLinks: NavLink[] = [
   { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
   { label: "Process", href: "#process" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Sectors", href: "#sectors" },
+  { label: "Industries", href: "#sectors" },
   { label: "Why Us", href: "#why-us" },
   { label: "FAQs", href: "#faqs" },
-  { label: "Testimonials", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -212,23 +209,31 @@ export const services = [
 export const processSteps = [
   {
     title: "Receive Brief & Scope",
-    description: "Turn your goals into a clear Scope of Work (SoW).",
+    description: "We gather your project requirements and clarify objectives to create a clear Scope of Work (SoW).",
   },
   {
-    title: "Design & Calculations",
-    description: "Load lists, sizing, and CAD outputs aligned to standards.",
+    title: "Quotation & Estimation",
+    description: "Provide a detailed cost estimate and timeline based on your scope.",
   },
   {
-    title: "Vendor Coordination",
-    description: "Reviews, bids, and clarifications to keep delivery moving.",
+    title: "Confirmation & Acceptance",
+    description: "You review and approve the quotation so we can officially start the project.",
   },
   {
-    title: "Interface Management",
-    description: "Coordinate across disciplines for clean integration.",
+    title: "CAD Drafting & Design",
+    description: "Our team produces detailed AutoCAD drawings, calculations, and design outputs according to standards.",
   },
   {
-    title: "Delivery & Compliance",
-    description: "Safety, documentation, and handover-ready packages.",
+    title: "Review & Revisions",
+    description: "Optional feedback, clarifications, or adjustments to ensure everything aligns with your expectations.",
+  },
+  {
+    title: "Delivery & Handover",
+    description: "Final CAD packages, documentation, and any compliance requirements are delivered ready for use.",
+  },
+  {
+    title: "Invoicing",
+    description: "Final invoice issued based on agreed terms, completing the project cycle.",
   },
 ] as const;
 
@@ -257,35 +262,87 @@ export const portfolioProjects = [
 
 export const sectors = [
   {
-    title: "Mining & Resources",
-    description: "Brownfield upgrades and capital projects across WA.",
+    title: "Mining & Resources (Greenfield & Brownfield)",
+    description: "",
   },
   {
-    title: "Infrastructure",
-    description: "Practical CAD packages for multi-discipline delivery.",
+    title: "Infrastructure & Utilities",
+    description: "",
   },
   {
-    title: "Grain Processing",
-    description: "Operationally focused electrical design and documentation.",
+    title: "Grain & Food Processing",
+    description: "",
   },
   {
-    title: "Lighting Design",
-    description: "Efficient lighting plans, modelling, and calculations.",
+    title: "Lighting Design & Electrical Systems",
+    description: "",
+  },
+  {
+    title: "Oil, Gas & Energy",
+    description: "",
+  },
+  {
+    title: "Water & Wastewater Treatment",
+    description: "",
+  },
+  {
+    title: "Commercial & Industrial Buildings",
+    description: "",
+  },
+  {
+    title: "Renewable Energy",
+    description: "",
   },
 ] as const;
 
 export const faqs = [
   {
     q: "What CAD tools do you use?",
-    a: "Power CAD, AutoCAD, ETAP, MicroStation, Navisworks and other key design platforms.",
+    a: "We specialize in AutoCAD, delivering precise and industry-standard electrical CAD drafting solutions.",
   },
   {
     q: "How do you price projects?",
-    a: "Pricing is based on scope and complexity. We provide custom quotes after a quick brief.",
+    a: "Projects are typically quoted based on scope, complexity, and timelines, with cost-effective options to fit your budget.",
   },
   {
     q: "Do you support NDAs and confidentiality?",
-    a: "Yes. We operate with strict compliance and confidentiality expectations.",
+    a: "Yes, all projects are protected under strict NDAs and confidentiality agreements.",
+  },
+  {
+    q: "Can you handle both small and large-scale projects?",
+    a: "Absolutely. Our scalable team can support single-discipline or multi-discipline projects of any size.",
+  },
+  {
+    q: "Do you offer revisions or design updates?",
+    a: "Yes, we include feedback rounds to ensure your CAD outputs match your requirements.",
+  },
+  {
+    q: "How quickly can you deliver a project?",
+    a: "Turnaround depends on scope, but we prioritize efficiency without compromising accuracy.",
+  },
+  {
+    q: "Do you work with clients outside Australia?",
+    a: "Yes, we support global clients with our Nepal-based outsourcing model.",
+  },
+  {
+    q: "How do you ensure quality and accuracy?",
+    a: "All outputs go through a strict internal QA process before delivery to minimize errors and rework.",
+  },
+  {
+    q: "What industries do you serve?",
+    a: "We serve mining, resources, infrastructure, industrial, commercial, renewable energy, grain processing, and more.",
+  },
+  {
+    q: "Can you integrate with our existing workflows or software?",
+    a: "Yes, our team can adapt to your project standards, formats, and collaboration tools.",
+  },
+  {
+    q: "How do I get started?",
+    a: "Simply share your project brief or Scope of Work (SoW), and we'll provide a quotation and timeline.",
+  },
+  {
+    q: "Do you provide ongoing support after delivery?",
+    a: "Yes, we offer support for revisions, updates, or additional drafting needs post-delivery.",
   },
 ] as const;
 

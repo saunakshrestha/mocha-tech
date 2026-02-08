@@ -3,7 +3,7 @@
 import * as React from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { heroCarouselImages } from "@/lib/data";
 import { Button } from "@/components/ui/button";
@@ -47,8 +47,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="font-[var(--font-heading)] text-4xl font-bold leading-[1.15] tracking-tight text-[#2d1f1a] sm:text-5xl lg:text-6xl"
           >
-            Precision CAD Outsourcing with a Mocha Twist – Energizing Your
-            Projects in Perth, WA
+            Professional CAD Drafting & Outsourcing Services in Perth, WA
           </motion.h1>
 
           <motion.p
@@ -57,23 +56,17 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
             className="mt-6 text-lg leading-relaxed text-foreground/70 sm:text-xl"
           >
-            Expert AutoCAD designs for mining and resources – Delivered with
-            warmth and efficiency.
+            Budget-Friendly AutoCAD Designs – Precise, Efficient Outsourcing for Any Industry
           </motion.p>
 
           <motion.div
             initial={reduceMotion ? undefined : { opacity: 0, y: 16 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-            className="mt-10 flex flex-col items-start gap-4 sm:flex-row">
+            className="mt-10">
             <Button asChild size="lg">
               <a href="#contact">
                 Get a Free Quote <ArrowRight />
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline">
-              <a href="/brochure.pdf" aria-label="Download brochure (placeholder)">
-                Download Brochure <Download />
               </a>
             </Button>
           </motion.div>
