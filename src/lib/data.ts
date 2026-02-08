@@ -60,6 +60,55 @@ export const brand = {
   },
 };
 
+export type TeamMember = {
+  id: string;
+  name: string;
+  title: string;
+  experience: string;
+  description: string;
+  image: string;
+  skills?: string[];
+};
+
+export const teamMembers: TeamMember[] = [
+  {
+    id: "anjan",
+    name: "Anjan Shrestha",
+    title: "Electrical Engineer",
+    experience: "5+ years",
+    description: "Electrical Engineer with 5+ years delivering complex infrastructure projects across Western Australia's mining and resources sector. Currently at WSP Australia, specializing in sustainable capital projects and electrical design.",
+    image: "/team/founder.jpeg",
+    skills: ["Lighting Design", "Battery Design", "Power CAD", "AutoCAD", "ETAP"],
+  },
+  {
+    id: "bibek",
+    name: "Bibek Shrestha",
+    title: "CAD Drafting Specialist",
+    experience: "2 years",
+    description: "CAD drafting specialist with 2 years of experience delivering precise AutoCAD documentation for electrical and mechanical projects.",
+    image: "/team/bibek_shrestha.jpg",
+    skills: ["AutoCAD", "Technical Drawing", "2D/3D Drafting"],
+  },
+  {
+    id: "sandesh",
+    name: "Sandesh Shrestha",
+    title: "CAD Technician",
+    experience: "1.5 years",
+    description: "CAD technician with 1.5 years of experience providing efficient AutoCAD drafting support across engineering disciplines.",
+    image: "/team/sandesh_shrestha.png",
+    skills: ["AutoCAD", "Drafting", "Design Coordination"],
+  },
+  {
+    id: "saunak",
+    name: "Saunak Shrestha",
+    title: "Developer",
+    experience: "2+ years",
+    description: "Full-stack developer with 2+ years of experience in web development and AutoCAD automation, bridging technical design with digital solutions.",
+    image: "/team/saunak_shrestha.png",
+    skills: ["Web Development", "AutoCAD", "Software Development"],
+  },
+];
+
 export const founderProfile = {
   name: "Anjan Shrestha",
   contact: {

@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/sections/Navbar";
 import { Hero } from "@/components/sections/Hero";
-import { AboutFounderSection } from "@/components/sections/AboutFounder";
+import { TeamSection } from "@/components/sections/Team";
 import { ProcessSection } from "@/components/sections/Process";
 import { SectorsSection } from "@/components/sections/Sectors";
 import { WhyUsSection } from "@/components/sections/WhyUs";
@@ -14,7 +14,7 @@ export default function Home() {
       <Navbar />
       <main id="main-content" role="main">
         <Hero />
-        <AboutFounderSection />
+        <TeamSection />
         <ProcessSection />
         <SectorsSection />
         <WhyUsSection />
