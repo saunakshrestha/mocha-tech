@@ -113,11 +113,11 @@ export const founderProfile = {
   name: "Anjan Shrestha",
   contact: {
     location: "Forrestfield, WA.",
-    phone: "0424055711 (Mobile).",
-    email: "anjanshrestha57@gmail.com.",
-    linkedin: "www.linkedin.com/in/anjanshrestha57.",
+    phone: "+61 0424 055 711 (Mobile)",
+    email: "anjanshrestha57@gmail.com",
+    linkedin: "www.linkedin.com/in/anjanshrestha57",
     blog:
-      "postgradaustralia.com.au/institutions/curtin-university/student-stories/anjan-shrestha.",
+      "postgradaustralia.com.au/institutions/curtin-university/student-stories/anjan-shrestha",
   },
   topSkills: [
     "Lighting & Rendering",
