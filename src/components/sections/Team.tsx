@@ -51,7 +51,7 @@ export function TeamSection() {
   };
 
   return (
-    <Section id="about" className="bg-gradient-to-b from-white to-orange-50/30">
+    <Section id="team" className="bg-gradient-to-b from-white to-orange-50/30">
       <div className="text-center mb-12">
         <motion.h2
           initial={reduceMotion ? undefined : { opacity: 0, y: 20 }}
