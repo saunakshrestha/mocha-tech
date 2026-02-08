@@ -38,9 +38,9 @@ export function Navbar() {
           <Image 
             src="/company-logo.svg" 
             alt="MochaTech Logo" 
-            width={48} 
-            height={48}
-            className="h-12 w-12"
+            width={64} 
+            height={64}
+            className="h-16 w-16"
           />
           <span className="text-[#2d1f1a]">MochaTech Pty Ltd</span>
         </Link>
