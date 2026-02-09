@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { heroCarouselImages } from "@/lib/data";
 import { Button } from "@/components/ui/button";
 
-const CAROUSEL_INTERVAL_MS = 4500;
+const CAROUSEL_INTERVAL_MS = 3000;
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
@@ -45,18 +45,18 @@ export function Hero() {
             initial={reduceMotion ? undefined : { opacity: 0, y: 24 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="font-[var(--font-heading)] text-4xl font-bold leading-[1.15] tracking-tight text-[#2d1f1a] sm:text-5xl lg:text-6xl"
+            className="font-[var(--font-heading)] text-3xl font-bold leading-[1.2] tracking-tight text-[#2d1f1a] sm:text-4xl lg:text-[2.75rem]"
           >
-            Professional CAD Drafting & Outsourcing Services in Perth, WA
+            Cost‑Effective CAD Drafting & Electrical Engineering Solutions
           </motion.h1>
 
           <motion.p
             initial={reduceMotion ? undefined : { opacity: 0, y: 16 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-            className="mt-6 text-lg leading-relaxed text-foreground/70 sm:text-xl"
+            className="mt-6 text-base leading-relaxed text-foreground/70 sm:text-lg lg:text-xl"
           >
-            Budget-Friendly AutoCAD Designs – Precise, Efficient Outsourcing for Any Industry
+            Expert AutoCAD drafting at 60% lower cost—offshore efficiency backed by local coordination, AS/NZS compliance, and detailed power system modelling.
           </motion.p>
 
           <motion.div

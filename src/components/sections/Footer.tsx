@@ -11,7 +11,7 @@ export function Footer() {
             MochaTech Pty Ltd
           </p>
           <p className="text-sm text-mocha-cream/80">
-            Electrical CAD and AutoCAD outsourcing from Nepal for Australia and global teams. Cost-effective CAD services with reliable delivery.
+            Effective CAD Drafting & Electrical Engineering Solutions
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export function Footer() {
       <div className="border-t border-mocha-cream/15">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-mocha-cream/60 md:flex-row md:items-center md:justify-between">
           <p>© 2026 MochaTech Pty Ltd. All rights reserved.</p>
-          <p>Electrical CAD outsourcing • AutoCAD • Nepal • cost-effective CAD services • global project teams</p>
+          <p>Electrical CAD Outsourcing | AutoCAD Drafting | Australia–Nepal Delivery Model | Cost-Effective Engineering Support</p>
         </div>
       </div>
     </footer>

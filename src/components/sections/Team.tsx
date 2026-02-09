@@ -69,13 +69,17 @@ export function TeamSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mt-4 text-lg text-foreground/70 max-w-2xl mx-auto"
         >
-          Meet the talented professionals behind MochaTech's expert CAD solutions
+          Meet the team behind MochaTech’s CAD drafting and Electrical Engineering solutions.
         </motion.p>
       </div>
 
       <div className="relative max-w-5xl mx-auto">
         {/* Carousel Container with Peek Effect */}
-        <div className="relative overflow-hidden">
+        <div 
+          className="relative overflow-hidden"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
           <div className="flex items-center justify-center px-4">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
@@ -95,7 +99,7 @@ export function TeamSection() {
                         src={teamMembers[currentIndex].image}
                         alt={teamMembers[currentIndex].name}
                         fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="object-cover object-top transition-transform duration-300 group-hover:scale-105"
                       />
                     </div>
 
