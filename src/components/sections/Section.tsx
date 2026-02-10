@@ -14,9 +14,9 @@ export const Section = React.forwardRef<
     <section
       ref={ref}
       id={id}
-      className={cn("scroll-mt-24 py-24 sm:py-32", className)}
+      className={cn("scroll-mt-24 py-16 sm:py-24 lg:py-32", className)}
     >
-      <div className="mx-auto w-full max-w-6xl px-4">{children}</div>
+      <div className="mx-auto w-full max-w-6xl px-6 md:px-8">{children}</div>
     </section>
   );
 });

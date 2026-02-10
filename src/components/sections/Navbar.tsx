@@ -30,7 +30,7 @@ export function Navbar() {
       animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
       className="fixed inset-x-0 top-0 z-50 border-b border-orange-200/40 bg-white/80 backdrop-blur-md shadow-sm"
     >
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-0.5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 md:px-6 py-0.5">
         <Link
           href="#home"
           className="flex items-center -my-2 ml-2 md:ml-0"
@@ -83,7 +83,7 @@ export function Navbar() {
           open ? "max-h-[80vh]" : "max-h-0",
         )}
       >
-        <div className="mx-auto grid max-w-6xl gap-2 px-4 py-4">
+        <div className="mx-auto grid max-w-6xl gap-2 px-6 py-4">
           {navLinks.map((l) => (
             <a
               key={l.href}

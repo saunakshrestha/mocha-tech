@@ -27,7 +27,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="coffee-texture relative flex min-h-[100svh] items-center overflow-hidden pt-20"
+      className="coffee-texture relative flex min-h-[100svh] items-center overflow-hidden pt-24 pb-12 md:pt-20"
     >
       {/* Soft organic blob shapes - modern 2024/25 style like Akaru */}
       <div className="pointer-events-none absolute inset-0">
@@ -35,7 +35,7 @@ export function Hero() {
         <div className="absolute right-[10%] top-[40%] h-[400px] w-[400px] rounded-full bg-gradient-to-tr from-amber-100/25 to-orange-50/15 blur-3xl" />
       </div>
 
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 px-4 lg:grid-cols-2 lg:gap-12">
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 px-6 md:px-8 lg:grid-cols-2 lg:gap-12">
         {/* Left: copy + CTAs */}
         <motion.div
           style={reduceMotion ? undefined : { y }}
@@ -63,8 +63,8 @@ export function Hero() {
             initial={reduceMotion ? undefined : { opacity: 0, y: 16 }}
             animate={reduceMotion ? undefined : { opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
-            className="mt-10">
-            <Button asChild size="lg">
+            className="mt-10 mb-8">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <a href="#contact">
                 Get a Free Quote <ArrowRight />
               </a>

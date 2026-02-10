@@ -20,6 +20,7 @@ export function TeamSection() {
   const reduceMotion = useReducedMotion();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [userInteracted, setUserInteracted] = useState(false);
 
   // Auto-play carousel
   useEffect(() => {
@@ -27,27 +28,35 @@ export function TeamSection() {
     
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % teamMembers.length);
-    }, 5000); // Switch every 5 seconds
+    }, 3000); // Switch every 5 seconds
 
     return () => clearInterval(interval);
   }, [isPaused]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % teamMembers.length);
+    setUserInteracted(true);
     setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 10000); // Resume auto-play after 10 seconds
+    setTimeout(() => setIsPaused(false), 15000); // Resume auto-play after 15 seconds
   };
 
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev - 1 + teamMembers.length) % teamMembers.length);
+    setUserInteracted(true);
     setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 10000);
+    setTimeout(() => setIsPaused(false), 15000);
   };
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
+    setUserInteracted(true);
     setIsPaused(true);
-    setTimeout(() => setIsPaused(false), 10000);
+    setTimeout(() => setIsPaused(false), 15000);
+  };
+
+  const togglePause = () => {
+    setIsPaused(!isPaused);
+    setUserInteracted(true);
   };
 
   return (
@@ -73,14 +82,14 @@ export function TeamSection() {
         </motion.p>
       </div>
 
-      <div className="relative max-w-5xl mx-auto">
+      <div className="relative max-w-5xl mx-auto px-4 md:px-6">
         {/* Carousel Container with Peek Effect */}
         <div 
-          className="relative overflow-hidden"
+          className="relative overflow-visible"
           onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          onMouseLeave={() => !userInteracted && setIsPaused(false)}
         >
-          <div className="flex items-center justify-center px-4">
+          <div className="flex items-center justify-center">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={currentIndex}
@@ -91,7 +100,7 @@ export function TeamSection() {
                 className="w-full max-w-2xl"
               >
                 <Card className="group border-slate-200 bg-white shadow-xl hover:shadow-2xl transition-all duration-300">
-                  <div className="grid md:grid-cols-[300px_1fr] gap-6 p-6">
+                  <div className="grid md:grid-cols-[300px_1fr] gap-6 p-6 md:p-8">
                     {/* Image Section */}
                     <div className="relative overflow-hidden rounded-xl aspect-square md:aspect-auto md:h-full">
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
@@ -104,7 +113,7 @@ export function TeamSection() {
                     </div>
 
                     {/* Content Section */}
-                    <div className="flex flex-col justify-center space-y-4">
+                    <div className="flex flex-col justify-center space-y-4 min-h-[280px] md:min-h-0">
                       <div>
                         <h3 className="text-2xl font-bold text-[#2d1f1a] mb-2">
                           {teamMembers[currentIndex].name}
@@ -166,39 +175,49 @@ export function TeamSection() {
               variant="outline"
               size="icon"
               onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/95 backdrop-blur-sm border-slate-300 hover:bg-blue-50 hover:border-blue-400 shadow-lg z-20 h-12 w-12"
+              className="absolute -left-2 md:left-0 top-1/2 -translate-y-1/2 rounded-full bg-white/95 backdrop-blur-sm border-slate-300 hover:bg-blue-50 hover:border-blue-400 shadow-lg z-20 h-10 w-10 md:h-12 md:w-12"
               aria-label="Previous team member"
             >
-              <ChevronLeft className="h-6 w-6 text-slate-700" />
+              <ChevronLeft className="h-5 w-5 md:h-6 md:w-6 text-slate-700" />
             </Button>
             <Button
               variant="outline"
               size="icon"
               onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/95 backdrop-blur-sm border-slate-300 hover:bg-blue-50 hover:border-blue-400 shadow-lg z-20 h-12 w-12"
+              className="absolute -right-2 md:right-0 top-1/2 -translate-y-1/2 rounded-full bg-white/95 backdrop-blur-sm border-slate-300 hover:bg-blue-50 hover:border-blue-400 shadow-lg z-20 h-10 w-10 md:h-12 md:w-12"
               aria-label="Next team member"
             >
-              <ChevronRight className="h-6 w-6 text-slate-700" />
+              <ChevronRight className="h-5 w-5 md:h-6 md:w-6 text-slate-700" />
             </Button>
           </>
         )}
 
         {/* Team Member Counter & Navigation */}
         {teamMembers.length > 1 && (
-          <div className="flex flex-col items-center gap-4 mt-8">
-            <div className="text-sm font-medium text-slate-700 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
-              Team Member {currentIndex + 1} of {teamMembers.length}
+          <div className="flex flex-col items-center gap-4 mt-10 md:mt-8">
+            <div className="flex items-center gap-4 flex-wrap justify-center">
+              <div className="text-sm font-medium text-slate-700 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
+                Team Member {currentIndex + 1} of {teamMembers.length}
+              </div>
+              <Button
+                variant={isPaused ? "default" : "outline"}
+                size="sm"
+                onClick={togglePause}
+                className="rounded-full px-4 h-8"
+              >
+                {isPaused ? "▶ Play" : "⏸ Pause"}
+              </Button>
             </div>
             
-            <div className="flex justify-center gap-2">
+            <div className="flex justify-center gap-2 px-4">
               {teamMembers.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  className={`h-2.5 md:h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex 
                       ? 'w-8 bg-blue-600' 
-                      : 'w-2 bg-slate-300 hover:bg-slate-400'
+                      : 'w-2.5 md:w-2 bg-slate-300 hover:bg-slate-400'
                   }`}
                   aria-label={`Go to team member ${index + 1}`}
                 />
