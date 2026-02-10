@@ -9,7 +9,6 @@ import { Menu, X } from "lucide-react";
 import { navLinks } from "@/lib/data";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { DarkModeToggle } from "@/components/sections/DarkModeToggle";
 
 export function Navbar() {
   const reduceMotion = useReducedMotion();
@@ -59,7 +58,6 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <DarkModeToggle />
           <Button asChild className="hidden md:inline-flex">
             <a href="#contact">Get a Quote</a>
           </Button>

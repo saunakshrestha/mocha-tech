@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
@@ -39,7 +38,7 @@ export function Hero() {
         {/* Left: copy + CTAs */}
         <motion.div
           style={reduceMotion ? undefined : { y }}
-          className="order-2 lg:order-1"
+          className="order-2 lg:order-1 flex flex-col justify-center"
         >
           <motion.h1
             initial={reduceMotion ? undefined : { opacity: 0, y: 24 }}
@@ -72,22 +71,26 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Right: illustration */}
+        {/* Right: video */}
         <motion.div
           initial={reduceMotion ? undefined : { opacity: 0, scale: 0.98 }}
           animate={reduceMotion ? undefined : { opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-          className="order-1 lg:order-2"
+          className="order-1 lg:order-2 flex items-center justify-center"
         >
-          <div className="relative flex items-center justify-center">
-            <Image
-              src="/illustrations/cad-work.svg"
-              alt="CAD Engineering Work"
-              width={600}
-              height={450}
-              className="w-full h-auto drop-shadow-2xl"
-              priority
-            />
+          <div className="relative w-full max-w-[360px] mx-auto">
+            <video
+              className="w-full h-auto rounded-xl shadow-2xl"
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls
+            >
+              <source src="/extras/intro-video.webm" type="video/webm" />
+              <source src="/extras/intro-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </motion.div>
       </div>
