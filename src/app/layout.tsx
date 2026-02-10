@@ -18,23 +18,35 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mochatech.com.au"),
-  title: "MochaTech Pty Ltd | Professional CAD Drafting & Outsourcing Services in Perth, WA",
+  title: "CAD Drafting Services Perth | AutoCAD Outsourcing Australia | MochaTech",
   description:
-    "Budget-friendly AutoCAD designs with precise, efficient outsourcing for any industry. Professional CAD drafting services in Perth, WA – mining, resources, infrastructure, and more.",
+    "Leading CAD drafting & AutoCAD services in Perth, WA. Affordable electrical CAD outsourcing for mining, infrastructure, oil & gas. Expert AutoCAD drafters delivering precision designs 24/7. Get instant quotes.",
   keywords: [
-    "CAD drafting Perth",
-    "AutoCAD drafting services",
-    "electrical CAD outsourcing",
-    "CAD outsourcing Nepal",
-    "AutoCAD Nepal",
+    "CAD drafting services Perth",
+    "AutoCAD drafting Perth",
     "CAD services Perth WA",
-    "budget-friendly CAD design",
-    "mining CAD services",
-    "infrastructure CAD drafting",
+    "electrical CAD drafting",
     "AutoCAD outsourcing Australia",
-    "professional CAD services",
+    "CAD drafting companies Perth",
+    "electrical drafting services",
+    "AutoCAD design services",
+    "CAD outsourcing services",
+    "mining CAD services Australia",
+    "infrastructure CAD drafting",
+    "oil and gas CAD services",
+    "affordable CAD drafting",
+    "professional AutoCAD services",
     "electrical design Perth",
-    "global project teams",
+    "CAD drafting Australia",
+    "AutoCAD electrical drafting",
+    "Perth engineering services",
+    "Western Australia CAD services",
+    "mechanical CAD drafting",
+    "structural CAD services",
+    "3D CAD modeling Perth",
+    "CAD conversion services",
+    "as-built drawings Perth",
+    "CAD documentation services",
   ],
   authors: [{ name: "MochaTech Pty Ltd" }],
   creator: "MochaTech Pty Ltd",
@@ -42,14 +54,23 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  verification: {
+    google: "google-site-verification=vdAzLxA7Pq8GF2dwPG4ELFdvLCHyEatfPqURhnjduUA",
+  },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicons/favicon.ico', sizes: 'any' },
       { url: '/favicons/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/favicons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     ],
     apple: [
       { url: '/favicons/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'icon',
+        url: '/favicons/favicon.ico',
+      },
     ],
   },
   manifest: "/favicons/site.webmanifest",
@@ -67,25 +88,27 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     url: "https://mochatech.com.au",
-    siteName: "MochaTech Pty Ltd",
-    title: "MochaTech Pty Ltd | Professional CAD Drafting & Outsourcing Services in Perth, WA",
+    siteName: "MochaTech - CAD Drafting Services Perth",
+    title: "Expert CAD Drafting & AutoCAD Services Perth | MochaTech Australia",
     description:
-      "Budget-friendly AutoCAD designs with precise, efficient outsourcing for any industry in Western Australia.",
+      "Top-rated CAD drafting services in Perth. Professional AutoCAD outsourcing for mining, oil & gas, infrastructure. Fast turnaround, competitive rates. Trusted by Australian industries.",
     images: [
       {
         url: "/illustrations/hero-cad-workspace.webp",
         width: 1200,
         height: 630,
-        alt: "MochaTech Electrical CAD Services",
+        alt: "Professional CAD Drafting and AutoCAD Services in Perth, Western Australia",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MochaTech Pty Ltd | Professional CAD Drafting & Outsourcing Services in Perth, WA",
+    title: "CAD Drafting Services Perth | AutoCAD Outsourcing | MochaTech",
     description:
-      "Budget-friendly AutoCAD designs with precise, efficient outsourcing for any industry in Western Australia.",
+      "Professional CAD drafting & AutoCAD services in Perth. Expert electrical, mechanical & structural drafting for Australian industries. Get your free quote today.",
     images: ["/illustrations/hero-cad-workspace.webp"],
+    creator: "@MochaTech",
+    site: "@MochaTech",
   },
 };
 
@@ -98,32 +121,88 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
     name: 'MochaTech Pty Ltd',
-    description: 'Budget-friendly AutoCAD designs with precise, efficient outsourcing for any industry in Western Australia.',
+    alternateName: 'MochaTech CAD Services',
+    description: 'Leading CAD drafting and AutoCAD services provider in Perth, Western Australia. Specializing in electrical, mechanical, and structural CAD drafting for mining, infrastructure, oil & gas industries across Australia.',
     url: 'https://mochatech.com.au',
+    telephone: '+61 0424 055 711',
+    email: 'projects@mochatech.com.au',
     address: {
       '@type': 'PostalAddress',
       addressRegion: 'WA',
       addressLocality: 'Perth',
       addressCountry: 'AU',
     },
-    areaServed: {
-      '@type': 'State',
-      name: 'Western Australia',
-    },
+    areaServed: [
+      {
+        '@type': 'State',
+        name: 'Western Australia',
+      },
+      {
+        '@type': 'Country',
+        name: 'Australia',
+      },
+    ],
     serviceType: [
-      'Electrical CAD Outsourcing',
+      'CAD Drafting Services',
       'AutoCAD Drafting',
-      'Electrical Design',
+      'Electrical CAD Outsourcing',
+      'Electrical Design Services',
+      'Mechanical CAD Drafting',
+      'Structural CAD Services',
+      'As-Built Drawings',
+      'CAD Conversion Services',
       'Vendor Coordination',
       'O&M Manuals',
+      '3D CAD Modeling',
     ],
     priceRange: '$$',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '50',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'CAD Drafting Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Electrical CAD Drafting',
+            description: 'Professional electrical CAD drafting and design services for all industries',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'AutoCAD Outsourcing',
+            description: 'Cost-effective AutoCAD outsourcing solutions with 24/7 support',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Mining CAD Services',
+            description: 'Specialized CAD services for mining and resources sector',
+          },
+        },
+      ],
+    },
   };
 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#6F4E37" />
+        <meta name="geo.region" content="AU-WA" />
+        <meta name="geo.placename" content="Perth" />
+        <meta name="geo.position" content="-31.9505;115.8605" />
+        <meta name="ICBM" content="-31.9505, 115.8605" />
+        <link rel="icon" href="/favicons/favicon.ico" sizes="any" />
+        <link rel="shortcut icon" href="/favicons/favicon.ico" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
