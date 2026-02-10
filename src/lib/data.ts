@@ -78,7 +78,25 @@ export const teamMembers: TeamMember[] = [
     experience: "5+ years",
     description: "Electrical Engineer with 5+ years delivering complex infrastructure projects across Western Australia's mining and resources sector. Currently at WSP Australia, specializing in sustainable capital projects and electrical design.",
     image: "/team/founder.jpeg",
-    skills: ["Lighting Design", "Battery Design", "Power CAD", "AutoCAD", "ETAP"],
+    skills: ["Electrical Design", "Client Interface", "Power CAD", "AutoCAD", "ETAP"],
+  },
+  {
+    id: "pramod",
+    name: "Pramod Sharma",
+    title: "Electrical Engineer",
+    experience: "5+ years",
+    description: "Electrical Engineer with 5+ years of experience in electrical engineering and project delivery across diverse sectors in Nepal. Specializes in electrical design, power systems, and compliance with international standards.",
+    image: "/team/pramod_sharma.jpg",
+    skills: ["Electrical Design", "Power Systems", "AutoCAD", "Project Coordination"],
+  },
+  {
+    id: "ashwin",
+    name: "Ashwin Marahatha",
+    title: "CAD Drafting & Electrical Engineering Specialist",
+    experience: "5+ years",
+    description: "Electrical engineering specialist with 5+ years of field experience and 3+ years of dedicated AutoCAD drafting expertise. Delivers precise technical documentation and electrical design solutions for complex projects.",
+    image: "/team/ashwin_marahatha.png",
+    skills: ["AutoCAD", "Electrical Design", "Sustainable Project Design"],
   },
   {
     id: "bibek",
@@ -95,26 +113,26 @@ export const teamMembers: TeamMember[] = [
     title: "CAD Technician",
     experience: "1.5 years",
     description: "CAD technician with 1.5 years of experience providing efficient AutoCAD drafting support across engineering disciplines.",
-    image: "/team/sandesh_shrestha.png",
+    image: "/team/sandesh_shrestha.jpeg",
     skills: ["AutoCAD", "Drafting", "Design Coordination"],
   },
   {
     id: "saunak",
     name: "Saunak Shrestha",
-    title: "Developer",
+    title: "Software Developer",
     experience: "2+ years",
-    description: "Full-stack developer with 2+ years of experience in web development and AutoCAD automation, bridging technical design with digital solutions.",
+    description: "Backend Developer with 2+ years of experience in Django, Python, REST APIs, and delivering reliable web solutions and technical support.",
     image: "/team/saunak_shrestha.png",
-    skills: ["Web Development", "AutoCAD", "Software Development"],
+    skills: ["Software Engineer", "IT Support", "Website Development"],
   },
 ];
 
 export const founderProfile = {
   name: "Anjan Shrestha",
   contact: {
-    location: "Forrestfield, WA.",
+    location: "Perth, WA.",
     phone: "+61 0424 055 711 (Mobile)",
-    email: "anjanshrestha57@gmail.com",
+    email: "projects@mochatech.com.au",
     linkedin: "www.linkedin.com/in/anjanshrestha57",
     blog:
       "postgradaustralia.com.au/institutions/curtin-university/student-stories/anjan-shrestha",
@@ -269,8 +287,8 @@ export const processSteps = [
     description: "You review and approve the quotation so we can officially start the project.",
   },
   {
-    title: "CAD Drafting & Design",
-    description: "Our team produces detailed AutoCAD drawings, calculations, and design outputs according to standards.",
+    title: "CAD Drafting & Engineering Design",
+    description: "Our team produces detailed AutoCAD drawings, engineering calculations, and design outputs according to standards.",
   },
   {
     title: "Review & Revisions",
@@ -311,7 +329,7 @@ export const portfolioProjects = [
 
 export const sectors = [
   {
-    title: "Mining & Resources (Greenfield & Brownfield)",
+    title: "Mining & Resources",
     description: "",
   },
   {
@@ -332,10 +350,6 @@ export const sectors = [
   },
   {
     title: "Water & Wastewater Treatment",
-    description: "",
-  },
-  {
-    title: "Commercial & Industrial Buildings",
     description: "",
   },
   {
@@ -376,10 +390,6 @@ export const faqs = [
   {
     q: "How do you ensure quality and accuracy?",
     a: "All outputs go through a strict internal QA process before delivery to minimize errors and rework.",
-  },
-  {
-    q: "What industries do you serve?",
-    a: "We serve mining, resources, infrastructure, industrial, commercial, renewable energy, grain processing, and more.",
   },
   {
     q: "Can you integrate with our existing workflows or software?",

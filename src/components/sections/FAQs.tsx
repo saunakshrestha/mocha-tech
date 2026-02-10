@@ -19,9 +19,7 @@ export function FAQsSection() {
         <h2 className="font-[var(--font-heading)] text-3xl font-bold text-[#2d1f1a] sm:text-4xl lg:text-5xl">
           FAQs
         </h2>
-        <p className="mt-4 max-w-2xl text-lg text-foreground/65">
-          An accessible accordion to answer objections quickly.
-        </p>
+        
       </motion.div>
 
       <motion.div

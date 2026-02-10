@@ -80,7 +80,7 @@ export function SectorsSection() {
           Industries We Serve
         </h2>
         <p className="text-lg text-mocha-cream/80 whitespace-nowrap overflow-hidden text-ellipsis">
-          Precise CAD drafting and engineering documentation for project teams across Australia and worldwide.
+          Precise CAD drafting and engineering documentation for different industries across Australia and Nepal.
         </p>
 
         <motion.div
@@ -90,12 +90,11 @@ export function SectorsSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mt-10 mb-12"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { value: 60, label: "Cost Savings", suffix: "%" },
               { value: 5, label: "Years Experience", suffix: "+" },
               { value: 10, label: "Projects", suffix: "+" },
-              { value: 24, label: "Hour Support", suffix: "/7" },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

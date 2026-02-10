@@ -17,8 +17,8 @@ export function AboutSection() {
     },
     {
       icon: Globe2,
-      title: "Global Expertise",
-      description: "Nepal-based team with Australian coordination for worldwide project support.",
+      title: "Offshore Drafting Support",
+      description: "Cost-efficient Nepal-based CAD team working in coordination with Australian project requirements.",
     },
     {
       icon: Shield,
@@ -72,7 +72,7 @@ export function AboutSection() {
           className="text-xl text-foreground/75 leading-relaxed max-w-3xl mx-auto"
         >
           Your <strong>trusted partner</strong> for professional AutoCAD drafting and electrical design. 
-          Serving clients across <strong>Australia and worldwide</strong> with precise, efficient, budget-friendly solutions.
+          Serving clients across <strong>Australia and Nepal</strong> with precise, efficient, budget-friendly solutions.
         </motion.p>
       </div>
 
