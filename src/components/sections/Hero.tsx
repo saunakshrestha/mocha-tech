@@ -47,7 +47,7 @@ export function Hero() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="font-[var(--font-heading)] text-3xl font-bold leading-[1.2] tracking-tight text-[#2d1f1a] sm:text-4xl lg:text-[2.75rem]"
           >
-            Cost‑Effective CAD Drafting & Electrical Engineering Solutions
+            Cost‑Effective CAD Drafting Outsourcing & Electrical Engineering Solutions
           </motion.h1>
 
           <motion.p
