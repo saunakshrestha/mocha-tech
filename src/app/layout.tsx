@@ -18,7 +18,7 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mochatech.com.au"),
-  title: "CAD Drafting Services Perth | AutoCAD Outsourcing Australia | MochaTech",
+  title: "CAD Drafting & AutoCAD Outsourcing Services | Offshore Nepal Team | MochaTech",
   description:
     "Leading CAD drafting & AutoCAD services in Perth, WA. Affordable electrical CAD outsourcing for mining, infrastructure, oil & gas. Expert AutoCAD drafters delivering precision designs 24/7. Get instant quotes.",
   keywords: [
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "CAD services Perth WA",
     "electrical CAD drafting",
     "AutoCAD outsourcing Australia",
-    "CAD drafting companies Perth",
+    "CAD drafting companies",
     "electrical drafting services",
     "AutoCAD design services",
     "CAD outsourcing services",
@@ -88,10 +88,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_AU",
     url: "https://mochatech.com.au",
-    siteName: "MochaTech - CAD Drafting Services Perth",
-    title: "Expert CAD Drafting & AutoCAD Services Perth | MochaTech Australia",
+    siteName: "MochaTech - CAD Drafting Services Nepal",
+    title: "Expert CAD Drafting & AutoCAD Services Nepal | MochaTech Australia",
     description:
-      "Top-rated CAD drafting services in Perth. Professional AutoCAD outsourcing for mining, oil & gas, infrastructure. Fast turnaround, competitive rates. Trusted by Australian industries.",
+      "Top-rated CAD drafting services. Professional AutoCAD outsourcing for mining, oil & gas, infrastructure. Fast turnaround, competitive rates. Trusted by Australian industries.",
     images: [
       {
         url: "/illustrations/hero-cad-workspace.webp",
@@ -103,7 +103,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CAD Drafting Services Perth | AutoCAD Outsourcing | MochaTech",
+    title: "CAD Drafting Services Nepal | AutoCAD Outsourcing | MochaTech",
     description:
       "Professional CAD drafting & AutoCAD services in Perth. Expert electrical, mechanical & structural drafting for Australian industries. Get your free quote today.",
     images: ["/illustrations/hero-cad-workspace.webp"],

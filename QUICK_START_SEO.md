@@ -237,7 +237,7 @@ Each blog post = more keywords = more Google traffic!
 
 ## ✨ What Makes Your Site Now Rank Better
 
-1. **Primary Keywords First**: "CAD Drafting Services Perth" is the FIRST thing Google sees
+1. **Primary Keywords First**: "CAD Drafting Services" is the FIRST thing Google sees
 2. **Local Intent**: "Perth" + "WA" + geo tags = local pack inclusion
 3. **Industry Terms**: Mining, oil & gas, infrastructure = niche authority
 4. **Action-Oriented**: "Get instant quotes" = higher click-through rate
