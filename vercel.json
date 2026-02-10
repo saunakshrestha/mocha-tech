@@ -1,11 +1,4 @@
 {
-  "redirects": [
-    {
-      "source": "https://www.mochatech.com.au/:path*",
-      "destination": "https://mochatech.com.au/:path*",
-      "permanent": true
-    }
-  ],
   "headers": [
     {
       "source": "/robots.txt",
